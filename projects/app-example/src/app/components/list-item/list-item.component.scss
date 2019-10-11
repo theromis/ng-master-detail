@@ -1,0 +1,51 @@
+@import 'mixins';
+
+:host {
+
+  display: block;
+  cursor: pointer;
+
+
+
+  .__component {
+
+    @include app-transition();
+
+    &:hover {
+      @include app-blur-backdrop();
+    }
+
+    &.--is-selected {
+
+      @include app-blur-backdrop();
+      position: relative;
+
+      &::after {
+        content: '\b7';
+        color: var(--app-color-primary);
+        font-size: 60px;
+        line-height: 0px;
+        position: absolute;
+        top: 26px;
+        left: 3px;
+      }
+
+    }
+
+  }
+
+  .__inner {
+    margin-left: var(--app-spacing--lg);
+    padding: var(--app-spacing--md) var(--app-spacing--md) var(--app-spacing--md) 0;
+    border-bottom: var(--app-border);
+  }
+
+  h1, h2, p {
+    text-overflow: inherit;
+    overflow: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+}

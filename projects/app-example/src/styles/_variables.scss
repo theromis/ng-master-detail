@@ -1,0 +1,30 @@
+:root {
+
+  // Color Variables
+  // NOTE: Names come from: http://chir.ag/projects/name-that-color/)
+  --app-color-primary: #3478f5;
+  --app-color-secondary: #f8ce46;
+  --app-color-white: #fff;
+  --app-color-alto: #dadada;
+  --app-color-mountain-mist: #8E8D92;
+  --app-color-alabaster: #fbfbfb;
+  --app-color-alabaster-trans: rgba(251,251,251,0.9);
+
+  // Border Variables
+  --app-border-color: var(--app-color-alto);
+  --app-border: 1px solid var(--app-border-color);
+
+  // Spacing Variables
+  --app-spacing--md: 15px;
+  --app-spacing--lg: 20px;
+
+  // Common Variables
+  --app-color-background: var(--app-color-wild-sand);
+
+  // Breakpoints
+  --app-breakpoint--sm: 320px;
+
+  // Text
+  --app-text-color-light: var(--app-color-mountain-mist);
+
+}

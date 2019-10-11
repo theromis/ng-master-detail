@@ -1,0 +1,18 @@
+@import 'mixins';
+
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding-top: var(--app-spacing--md);
+  @include app-blur-backdrop();
+
+  h1 {
+    padding: var(--app-spacing--md) var(--app-spacing--lg) var(--app-spacing--md);
+    margin-bottom: 0;
+    border-bottom: var(--app-border);
+    position: sticky;
+    top: 0;
+  }
+}

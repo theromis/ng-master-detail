@@ -1,0 +1,15 @@
+<lib-master-detail>
+  <app-header
+    [title]="'Master'">
+  </app-header>
+  <ul>
+    <li *ngFor="let character of (characters$ | async)">
+      <app-list-item
+        (click)="select(character)"
+        [title]="character.title"
+        [description]="character.description"
+        [isSelected]="(character$ | async) && (character$ | async).id == character.id">
+      </app-list-item>
+    </li>
+  </ul>
+</lib-master-detail>

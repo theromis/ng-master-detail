@@ -1,0 +1,7 @@
+<app-header
+    [title]="'Detail'">
+</app-header>
+
+<ng-container *ngIf="character$ | async; let character">
+  {{ character.title }}
+</ng-container>

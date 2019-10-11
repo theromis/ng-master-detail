@@ -1,0 +1,40 @@
+:host {
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  --detail: 420px;
+  --border: 1px solid #dadada;
+
+  @mixin scroll-children() {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    -ms-scroll-chaining: none;
+    overscroll-behavior: contain;
+  }
+
+  .__master {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include scroll-children();
+    &.--is-desktop {
+      width: var(--detail);
+    }
+
+  }
+
+  .__detail {
+    position: relative;
+    flex-grow: 1;
+    border-left: var(--border);
+    width: 100%;
+    height: 100%;
+    @include scroll-children();
+  }
+
+}

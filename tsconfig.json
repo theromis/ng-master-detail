@@ -1,0 +1,46 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@lib/master-detail": [
+        "projects/lib-master-detail/src/public-api.ts"
+      ],
+      "@lib/master-detail/*": [
+        "projects/lib-master-detail/src/*"
+      ],
+      "lib-core": [
+        "dist/lib-core"
+      ],
+      "lib-core/*": [
+        "dist/lib-core/*"
+      ],
+      "lib-atomic": [
+        "dist/lib-atomic"
+      ],
+      "lib-atomic/*": [
+        "dist/lib-atomic/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}
