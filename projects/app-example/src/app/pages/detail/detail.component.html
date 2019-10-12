@@ -1,7 +1,11 @@
-<app-header
-    [title]="'Detail'">
+<app-header class="__header" [showBack]="true"
+  [title]="(character$ | async) && (character$ | async).title">
 </app-header>
 
-<ng-container *ngIf="character$ | async; let character">
-  {{ character.title }}
-</ng-container>
+<section class="__content">
+
+  <div>
+    Detail Page
+  </div>
+
+</section>

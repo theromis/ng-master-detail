@@ -5,11 +5,14 @@
   display: block;
   cursor: pointer;
 
-
+  &:focus {
+    outline: none;
+  }
 
   .__component {
 
     @include app-transition();
+    user-select: none;
 
     &:hover {
       @include app-blur-backdrop();

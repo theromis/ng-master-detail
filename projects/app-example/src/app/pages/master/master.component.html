@@ -5,7 +5,7 @@
   <ul>
     <li *ngFor="let character of (characters$ | async)">
       <app-list-item
-        (click)="select(character)"
+        [libMasterRouterLink]="['detail', character.id]"
         [title]="character.title"
         [description]="character.description"
         [isSelected]="(character$ | async) && (character$ | async).id == character.id">

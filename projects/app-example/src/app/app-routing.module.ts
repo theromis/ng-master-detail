@@ -27,7 +27,11 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'detail/1'
+        redirectTo: 'detail'
+      },
+      {
+        path: 'detail',
+        component: DetailComponent
       },
       ...detailRoutes
     ]
@@ -38,7 +42,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes, {
+    enableTracing: false
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

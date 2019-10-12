@@ -24,12 +24,14 @@ export class MasterComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.routeChangeSub$ = this.route.firstChild.paramMap
-      .subscribe(map =>
-        this.character$ =
-          this.store.pipe(
-            select(selectCharacterById, { id: map.get('id') })
-          )
-      );
+      .subscribe(map => {
+        const characterId = map.get('id');
+        if (characterId) {
+          this.character$ = this.store.pipe(
+            select(selectCharacterById, { id: characterId })
+          );
+        }
+      });
   }
 
   ngOnDestroy() {

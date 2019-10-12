@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BreakpointService } from '@lib/master-detail';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Input() title = 'No Title';
+  @Input() showBack = false;
+  @Input() backRoute = '../../';
 
-  constructor() { }
+  constructor(public breakpointService: BreakpointService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }

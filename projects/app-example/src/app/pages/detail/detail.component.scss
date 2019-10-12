@@ -1,0 +1,23 @@
+@import 'mixins';
+
+:host {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+
+  .__header {
+
+  }
+
+  .__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--app-text-size--xl);
+    font-weight: 500;
+    color: var(--app-border-color);
+    @include app-blur-backdrop();
+  }
+}
