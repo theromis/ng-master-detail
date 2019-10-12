@@ -3,13 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RouterModule } from '@angular/router';
 import { MasterDetailComponent } from './components';
-import { MasterDetailRouterLinkDirective } from './directives';
+import { MasterRouterLinkDirective } from './directives';
 import { BreakpointService } from './services';
+
+const components = [ MasterDetailComponent ];
+const directives = [ MasterRouterLinkDirective ];
 
 @NgModule({
   declarations: [
-    MasterDetailComponent,
-    MasterDetailRouterLinkDirective
+    ...components,
+    ...directives
   ],
   imports: [
     BrowserModule,
@@ -17,7 +20,8 @@ import { BreakpointService } from './services';
     RouterModule
   ],
   exports: [
-    MasterDetailComponent
+    ...components,
+    ...directives
   ],
   providers: [
     BreakpointService

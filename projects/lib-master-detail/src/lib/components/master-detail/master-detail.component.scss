@@ -5,7 +5,7 @@
   height: 100%;
   overflow: hidden;
   --detail: 420px;
-  --border: 1px solid #dadada;
+  --border: 1px solid var(--app-border-color, #dadada);
 
   @mixin scroll-children() {
     -ms-touch-action: pan-y;

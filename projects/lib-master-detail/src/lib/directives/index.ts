@@ -1,1 +1,1 @@
-export * from './master-detail-router-link.directive';
+export * from './master-router-link.directive';
