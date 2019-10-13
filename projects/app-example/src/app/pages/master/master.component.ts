@@ -23,6 +23,10 @@ export class MasterComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    /* ------------------------------------------------- */
+    /* Listen for changes in the route, then highlight   */
+    /* the selected item in the list...                  */
+    /* ------------------------------------------------- */
     this.routeChangeSub$ = this.route.firstChild.paramMap
       .subscribe(map => {
         const characterId = map.get('id');
@@ -36,10 +40,6 @@ export class MasterComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.routeChangeSub$.unsubscribe();
-  }
-
-  select(data) {
-    this.router.navigate(['detail', data.id], { relativeTo: this.route, state: data });
   }
 
 }

@@ -1,48 +1,42 @@
 :root {
 
-  --app-color-primary: #3478f5;
-  --app-color-white: #fff;
-  --app-color-alabaster-trans: rgba(251,251,251,0.9);
+  /**********************************************/
+  /* NOTE: When variables have serveral         */
+  /*       options please try and stick to      */
+  /*       t-shirt sizes...                     */
+  /**********************************************/
+  /* EAMPLE: xs, sm, md, lg, xl                 */
+  /**********************************************/
 
-  // Common Variables
-  --app-color-background: var(--app-color-white);
+  /**********************************************/
+  /* BORDERS                                    */
+  /**********************************************/
 
-  // Border Variables
-  --app-border-color: #dadada;
-  --app-border: 1px solid var(--app-border-color);
+  --app-border: 1px solid var(--app-color-border);
 
-  // Text
-  --app-text-color-light: #8E8D92;
-  --app-text-color-regular: #000;
+  /**********************************************/
+  /* TEXT                                       */
+  /**********************************************/
+
   --app-text-size--sm: 12px;
   --app-text-size--md: 14px;
   --app-text-size--lg: 16px;
   --app-text-size--xl: 24px;
 
-  @media (prefers-color-scheme: dark) {
+  /**********************************************/
+  /* SPACING                                    */
+  /**********************************************/
 
-    --app-color-alabaster-trans: rgba(20,20,20,0.9);
-
-    // Common Variables
-    --app-color-background: #111;
-
-    // Text
-    --app-text-color-light: #787878;
-    --app-text-color-regular: rgb(223,223,223);
-
-    // Border Variables
-    --app-border-color: #212121;
-    --app-border: 1px solid var(--app-border-color);
-  }
-
-  // Spacing Variables
   --app-spacing--xl: 24px;
   --app-spacing--lg: 20px;
   --app-spacing--md: 15px;
   --app-spacing--sm: 10px;
   --app-spacing--xs: 5px;
 
-  // Breakpoints
+  /**********************************************/
+  /* BREAKPOINTS                                */
+  /**********************************************/
+
   --app-breakpoint--sm: 320px;
 
 }

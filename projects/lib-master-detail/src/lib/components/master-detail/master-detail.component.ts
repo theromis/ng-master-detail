@@ -15,10 +15,12 @@ export class MasterDetailComponent implements OnInit {
   ngOnInit() { }
 
   onOutletActivated($event) {
+    // Primarily here for debugging...
     this.isOutletActive = true;
   }
 
   onOutletDeactivated($event) {
+    // Primarily here for debugging...
     this.isOutletActive = false;
   }
 

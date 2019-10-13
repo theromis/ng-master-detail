@@ -6,6 +6,11 @@ import * as actions from './character.actions';
 export const charactersFeatureKey = 'characters';
 export interface State extends EntityState<Character> { }
 export const adapter: EntityAdapter<Character> = createEntityAdapter<Character>();
+
+/* ------------------------------------------------- */
+/* NOTE: For demonstration purposes, just hard       */
+/*       code the characters in the state store      */
+/* ------------------------------------------------- */
 export const initialState: State = adapter.getInitialState({
   ids: [
     0, 1, 2, 3, 4,

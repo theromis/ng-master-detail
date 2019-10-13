@@ -9,6 +9,13 @@ import { BreakpointService } from '../services';
 @Directive({selector: ':not(a):not(area)[libMasterRouterLink]'})
 export class MasterRouterLinkDirective extends RouterLink {
 
+  /* -------------------------------------------- */
+  /* NOTE: This directive is pretty simple, the   */
+  /*       important bit here just swaps out the  */
+  /*       'relativeTo' option, depending on the  */
+  /*       current screen size.                   */
+  /* -------------------------------------------- */
+
   private myCommands: any[] = [];
 
   @Input()
@@ -31,9 +38,12 @@ export class MasterRouterLinkDirective extends RouterLink {
 
   @HostListener('click')
   onClick(): boolean {
+
+    // NOTE: Change 'relativeTo' depending on the current screen size...
     const myRoute = this.breakpointService.isDesktop ? this.myRoute : this.myRoute.parent;
     this.myRouter.navigate(this.myCommands, { relativeTo: myRoute });
     return true;
+
   }
 
 }

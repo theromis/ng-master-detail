@@ -4,8 +4,19 @@
 
 <section class="__content">
 
-  <div>
-    Detail Page
+  <div class="__content-text">
+
+    <h1>
+      Detail Page
+    </h1>
+
+    <h2>
+      Character ID
+      <strong *ngIf="(character$ | async)">
+        {{ (character$ | async).id }}
+      </strong>
+    </h2>
+
   </div>
 
 </section>

@@ -1,6 +1,6 @@
 @mixin app-blur-backdrop() {
   backdrop-filter: blur(4px);
-  background-color: var(--app-color-alabaster-trans);
+  background-color: var(--app-color-background-transparent);
 }
 
 @mixin app-transition(

@@ -20,8 +20,12 @@
 
     &.--is-selected {
 
-      @include app-blur-backdrop();
+      background: var(--app-color-background-highlight);
       position: relative;
+
+      p {
+        color: var(--app-color-text-secondary-highlight);
+      }
 
       &::after {
         content: '\b7';

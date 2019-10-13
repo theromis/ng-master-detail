@@ -17,7 +17,26 @@
     justify-content: center;
     font-size: var(--app-text-size--xl);
     font-weight: 500;
-    color: var(--app-border-color);
-    @include app-blur-backdrop();
+    color: var(--app-color-text-secondary);
+    background: var(--app-color-background);
+
+    .__content-text {
+      text-align: center;
+    }
+
+    h1 {
+      display: block;
+      font-size: var(--app-text-size--xl);
+      color: var(--app-color-text-primary);
+      margin: 0;
+    }
+
+    h2 {
+      display: block;
+      font-size: var(--app-text-size--lg);
+      font-weight: normal;
+      margin: 0;
+    }
+
   }
 }
