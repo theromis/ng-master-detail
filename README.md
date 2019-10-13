@@ -18,11 +18,11 @@ We have 2 Projects:
 
 Basically, there are three main tricks to make this work:
 
-### 1. Set Up Routes As Both Siblings and Children
+1. Set Up Routes As Both Siblings and Children
 
-### 2. Use the `<lib-maser-detail>` component to switch between desktop and mobile views
+2. Use the `<lib-maser-detail>` component to switch between desktop and mobile views
 
-### 3. Use the `libMasterRouterLink` directive (instead of angulars `routerLink`) for `master` page route navigation
+3. Use the `libMasterRouterLink` directive (instead of angulars `routerLink`) for `master` page route navigation
 
 ## How It Works &middot; Detail
 
