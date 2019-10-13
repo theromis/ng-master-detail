@@ -1,4 +1,4 @@
-# ng-master-detail + dark mode bonus
+# ng-master-detail + dark mode
 
 A quick experiment and demo of a responsive `master-detail` component in angular.
 
