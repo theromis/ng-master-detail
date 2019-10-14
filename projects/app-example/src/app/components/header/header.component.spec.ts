@@ -1,14 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header.component';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { LibMasterDetailModule } from '@lib/master-detail';
 
-describe('ListHeaderComponent', () => {
+describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HeaderComponent]
+      declarations: [HeaderComponent],
+      imports: [
+        LibMasterDetailModule,
+        RouterModule.forRoot([])
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
       .compileComponents();
   }));

@@ -1,6 +1,11 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { HeaderComponent } from '../../components';
 import { MasterComponent } from './master.component';
+import { LibMasterDetailModule } from '@lib/master-detail';
+import { charactersFeatureKey, charactersReducer } from '../../state/character.reducer';
 
 describe('MasterComponent', () => {
   let component: MasterComponent;
@@ -8,7 +13,16 @@ describe('MasterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MasterComponent ]
+      declarations: [
+        HeaderComponent,
+        MasterComponent
+      ],
+      imports: [
+        LibMasterDetailModule,
+        RouterModule.forRoot([]),
+        StoreModule.forRoot({ [charactersFeatureKey]: charactersReducer }),
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   }));

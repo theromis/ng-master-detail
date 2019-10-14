@@ -27,15 +27,17 @@ export class MasterComponent implements OnInit, OnDestroy {
     /* Listen for changes in the route, then highlight   */
     /* the selected item in the list...                  */
     /* ------------------------------------------------- */
-    this.routeChangeSub$ = this.route.firstChild.paramMap
-      .subscribe(map => {
-        const characterId = map.get('id');
-        if (characterId) {
-          this.character$ = this.store.pipe(
-            select(selectCharacterById, { id: characterId })
-          );
-        }
-      });
+    if (this.route.firstChild) {
+      this.routeChangeSub$ = this.route.firstChild.paramMap
+        .subscribe(map => {
+          const characterId = map.get('id');
+          if (characterId) {
+            this.character$ = this.store.pipe(
+              select(selectCharacterById, { id: characterId })
+            );
+          }
+        });
+    }
   }
 
   ngOnDestroy() {

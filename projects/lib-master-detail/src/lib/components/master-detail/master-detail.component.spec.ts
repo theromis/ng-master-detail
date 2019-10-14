@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterModule } from '@angular/router';
+import { BreakpointService } from '../../services';
 import { MasterDetailComponent } from './master-detail.component';
+
 
 describe('LibMasterDetailComponent', () => {
   let component: MasterDetailComponent;
@@ -8,7 +10,13 @@ describe('LibMasterDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MasterDetailComponent ]
+      declarations: [ MasterDetailComponent ],
+      providers: [
+        BreakpointService
+      ],
+      imports: [
+        RouterModule.forRoot([]),
+      ]
     })
     .compileComponents();
   }));

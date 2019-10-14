@@ -135,6 +135,11 @@
             "styles": [
               "projects/app-example/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/app-example/src/styles/"
+              ]
+            },
             "scripts": []
           }
         },

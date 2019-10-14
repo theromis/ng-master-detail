@@ -17,7 +17,7 @@ const directives = [ MasterRouterLinkDirective ];
   imports: [
     BrowserModule,
     LayoutModule,
-    RouterModule
+    RouterModule.forRoot([])
   ],
   exports: [
     ...components,
