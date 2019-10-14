@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MasterDetailComponent } from './components';
 import { MasterRouterLinkDirective } from './directives';
 import { BreakpointService } from './services';
+import { MartTesetDirective } from './directives/mart-teset.directive';
 
 const components = [ MasterDetailComponent ];
 const directives = [ MasterRouterLinkDirective ];
@@ -12,7 +13,8 @@ const directives = [ MasterRouterLinkDirective ];
 @NgModule({
   declarations: [
     ...components,
-    ...directives
+    ...directives,
+    MartTesetDirective
   ],
   imports: [
     BrowserModule,
