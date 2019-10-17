@@ -39,7 +39,6 @@ describe('LibMasterDetailComponent', () => {
   describe('when on desktop devices', () => {
 
     it('the detail view should be displayed inline' , () => {
-      // bpStub.isDesktop = true;
       component.breakpoints.isDesktop = true;
       fixture.detectChanges();
       const componentDe: DebugElement = fixture.debugElement;
@@ -52,7 +51,6 @@ describe('LibMasterDetailComponent', () => {
 
   describe('when on mobile devices', () => {
     it('the detail view should be hidden' , () => {
-      // bpStub.isDesktop = false;
       fixture.detectChanges();
       const componentDe: DebugElement = fixture.debugElement;
       const componentEl = componentDe.nativeElement;
