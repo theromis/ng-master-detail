@@ -1,8 +1,8 @@
-# ng-master-detail + dark mode
+# **Angular** Master-Detail Component + Dark Mode
 
 A quick experiment and demo of a responsive `master-detail` component in angular. This is a companion repo for the following [blog post](https://medium.com/@blewpri/angular-8-responsive-master-detail-3b4d591b3294).
 
-![Drag Racing](README.png)
+![Master Detail Screenshot](README.png)
 
 ## Quickstart
 
