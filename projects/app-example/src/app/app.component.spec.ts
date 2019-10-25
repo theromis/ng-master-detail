@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
+describe('<app-root/> App', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -15,10 +15,14 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+  describe('Smoke Test', () => {
+
+    it('SMOKE: Should create', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.debugElement.componentInstance;
+      expect(app).toBeTruthy();
+    });
+
   });
 
 });

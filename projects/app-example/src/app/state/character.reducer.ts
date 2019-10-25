@@ -3,15 +3,14 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { Character } from './character.model';
 import * as actions from './character.actions';
 
-export const charactersFeatureKey = 'characters';
-export interface State extends EntityState<Character> { }
+export interface CharacterState extends EntityState<Character> { }
 export const adapter: EntityAdapter<Character> = createEntityAdapter<Character>();
 
 /* ------------------------------------------------- */
 /* NOTE: For demonstration purposes, just hard       */
 /*       code the characters in the state store      */
 /* ------------------------------------------------- */
-export const initialState: State = adapter.getInitialState({
+export const initialState: CharacterState = adapter.getInitialState({
   ids: [
     0, 1, 2, 3, 4,
     5, 6, 8, 9, 10,
@@ -45,7 +44,7 @@ const characterReducer = createReducer(
 
 );
 
-export function charactersReducer(state: State | undefined, action: Action) {
+export function charactersReducer(state: CharacterState | undefined, action: Action) {
   return characterReducer(state, action);
 }
 

@@ -5,8 +5,8 @@ import {
 
 import * as fromCharacter from './character.reducer';
 
-export const selectCharacterState = createFeatureSelector<fromCharacter.State>(
-  fromCharacter.charactersFeatureKey
+export const selectCharacterState = createFeatureSelector<fromCharacter.CharacterState>(
+  'characters'
 );
 
 export const selectCharacterEntities = createSelector(

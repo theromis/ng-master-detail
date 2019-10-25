@@ -8,7 +8,9 @@ import { BreakpointService } from '@lib/master-detail';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() title = 'No Title';
+  public defaultTitle = 'No title';
+
+  @Input() title = this.defaultTitle;
   @Input() showBack = false;
   @Input() backRoute = '../../';
 

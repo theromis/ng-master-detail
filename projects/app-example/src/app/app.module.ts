@@ -8,7 +8,7 @@ import { LibMasterDetailModule } from '@lib/master-detail';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { charactersFeatureKey, charactersReducer } from './state/character.reducer';
+import { charactersReducer } from './state/character.reducer';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { charactersFeatureKey, charactersReducer } from './state/character.reduc
     AppRoutingModule,
     HttpClientModule,
     LibMasterDetailModule,
-    StoreModule.forRoot({ [charactersFeatureKey]: charactersReducer }),
+    StoreModule.forRoot({ characters: charactersReducer }),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [],

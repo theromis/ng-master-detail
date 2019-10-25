@@ -1,7 +1,7 @@
 import { Observable, Subscription } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Character, selectAllCharacters, selectCharacterById } from '../../state';
 
 @Component({
@@ -16,9 +16,9 @@ export class MasterComponent implements OnInit, OnDestroy {
   public characters$: Observable<Character[]>;
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private store: Store<any>) {
+    public router: Router,
+    public route: ActivatedRoute,
+    public store: Store<any>) {
       this.characters$ = this.store.select(selectAllCharacters);
   }
 
@@ -29,19 +29,25 @@ export class MasterComponent implements OnInit, OnDestroy {
     /* ------------------------------------------------- */
     if (this.route.firstChild) {
       this.routeChangeSub$ = this.route.firstChild.paramMap
-        .subscribe(map => {
-          const characterId = map.get('id');
-          if (characterId) {
-            this.character$ = this.store.pipe(
-              select(selectCharacterById, { id: characterId })
-            );
-          }
-        });
+        .subscribe((map: ParamMap) =>
+          this.getRouteParams(map));
     }
   }
 
   ngOnDestroy() {
     this.routeChangeSub$.unsubscribe();
+  }
+
+  getRouteParams(map: ParamMap): number {
+    const characterId = map.get('id');
+    let id: number = null;
+    if (characterId) {
+      this.character$ = this.store.pipe(
+        select(selectCharacterById, { id: characterId })
+      );
+      id = parseInt(characterId, 10);
+    }
+    return id;
   }
 
 }

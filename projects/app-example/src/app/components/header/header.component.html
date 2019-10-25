@@ -1,4 +1,6 @@
-<div class="__back" [routerLink]="[backRoute]"
+<div class="__back"
+  data-test="backButton"
+  [routerLink]="[backRoute]"
   [style.visibility]="showBack && !breakpointService.isDesktop ? 'visible' : 'hidden'">
 
   <ion-icon name="arrow-back"></ion-icon>
@@ -9,6 +11,6 @@
 
 </div>
 
-<h1>
-  {{ title || 'Nothing Selected' }}
+<h1 data-test="headerTitle">
+  {{ title || defaultTitle }}
 </h1>

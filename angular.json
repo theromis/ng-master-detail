@@ -19,6 +19,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "codeCoverage": true,
             "main": "projects/lib-master-detail/src/test.ts",
             "tsConfig": "projects/lib-master-detail/tsconfig.spec.json",
             "karmaConfig": "projects/lib-master-detail/karma.conf.js"
@@ -124,6 +125,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "codeCoverage": true,
             "main": "projects/app-example/src/test.ts",
             "polyfills": "projects/app-example/src/polyfills.ts",
             "tsConfig": "projects/app-example/tsconfig.spec.json",
