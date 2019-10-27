@@ -1,5 +1,5 @@
 # Using the node alpine image to build the React app
-image: node:alpine
+image: trion/ng-cli-karma
 
 # Announce the URL as per CRA docs
 # https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#advanced-configuration
@@ -10,7 +10,7 @@ cache:
   - node_modules
 
 before_script:
-  - npm install
+  - npm ci
 
 # Name the stages involved in the pipeline
 stages:
@@ -20,9 +20,9 @@ stages:
 build:
   stage: build
   script:
-    - npm run test app-example
-    - npm run test lib-master-detail
-    - npm run build app-example
+    - ./node_modules/@angular/cli/bin/ng test app-example --progress false --watch=false
+    - ./node_modules/@angular/cli/bin/ng test lib-master-detail --progress false --watch=false
+    - ./node_modules/@angular/cli/bin/ng build app-example --prod
   artifacts:
     untracked: true
   only:
@@ -35,9 +35,9 @@ deploy:
   stage: deploy
   script:
     - npm install # Install all dependencies
-    - npm run build --prod app-example # Build for prod
-    - cp dist/app-example/index.html dist/app-example/404.html # Not necessary, but helps with https://medium.com/@pshrmn/demystifying-single-page-applications-3068d0555d46
-    - mv dist/app-example public # Move build files to public dir for Gitlab Pages
+    - ./node_modules/@angular/cli/bin/ng build app-example --prod # Build for prod
+    - cp ./dist/app-example/index.html ./dist/app-example/404.html # Not necessary, but helps with https://medium.com/@pshrmn/demystifying-single-page-applications-3068d0555d46
+    - mv ./dist/app-example public # Move build files to public dir for Gitlab Pages
   artifacts:
     paths:
     - public # The built files for Gitlab Pages to serve
